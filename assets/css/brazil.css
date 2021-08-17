@@ -1,0 +1,106 @@
+:root {
+	--body-background-color: #006323;
+	--player-background-color: #E2BA00;
+	--player-border-radius: 15px;
+	--player-padding: 15px;
+	--list-background-color: #FFF;
+	--scroll-track: #f1f1f1;
+	--scroll-thumb: #DCDCDC;
+
+	--width-calc: calc(100vw / 1.75);
+
+	--body-font-family: 'Roboto';
+}
+body {
+	font-family: var(--body-font-family);
+}
+@media (max-width: 576px) {
+	:root {
+		--width-calc: calc(100vw / 1.25);
+	}
+}
+@media (min-width: 577px) and (max-width: 768px) {
+}
+@media (min-width: 769px) and (max-width: 992px) {
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+}
+@media (min-width: 1201px) and (min-width: 1400px) {
+}
+.container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--body-background-color);
+}
+.radio-container {
+	background-color: var(--player-background-color);
+	height: 25em;
+	max-width: 20em;
+	width: var(--width-calc);
+	padding: var(--player-padding);
+	border-radius: var(--player-border-radius);
+	box-shadow:  0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+.radio-list ul {
+	border: 2px #AFAFAF solid;
+	background-color: var(--list-background-color);
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	height: calc(2 * (25em / 3));
+	user-select: none;
+	overflow: auto;
+}
+.radio-list ul::-webkit-scrollbar {
+	width: 3px;
+}
+.radio-list ul::-webkit-scrollbar-track {
+	background: var(--scroll-track);
+}
+
+.radio-list ul::-webkit-scrollbar-thumb {
+	background: var(--scroll-thumb);
+}
+
+.radio-list ul::-webkit-scrollbar-thumb:hover {
+	background: var(--scroll-thumb);
+}
+.radio-list li {
+	padding: 8px;
+	transition: 0.25s background-color;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.radio-list li:hover {
+	background-color: #c5c5c5;
+}
+.radio-buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: calc(25em / 3);
+}
+.radio-buttons button {
+	padding: 1.5em;
+	border-radius: 50%;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 16px;
+	transition: 0.5s box-shadow;
+}
+.radio-buttons button:hover {
+	box-shadow: 0 5px 15px 0 rgb(0 0 0 / 20%), 0 5px 15px 0 rgb(0 0 0 / 19%);
+}
+.radio-buttons button i {
+	width: 16px;
+	height: 14px;
+}
+.audio-tag {
+	display: none;
+}
